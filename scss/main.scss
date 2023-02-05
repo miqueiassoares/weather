@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+@use "./reset";
+
+.container {
+  background-color: #272791;
+  box-shadow: 5px 5px 10px #222249;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+
+  .inputDados {
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    form {
+      display: flex;
+      gap: 5px;
+
+      input {
+        width: 85%;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        font-size: 1.1rem;
+        
+      }
+      button {
+        background: #8f8fff;
+        border: none;
+        border-radius: 5px;
+        width: 15%;
+        transition: .2s;
+        &:hover {
+          cursor: pointer;
+          opacity: .5;
+        }
+      }
+    }
+  }
+
+  .exibicao {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 2px solid #fff;
+    padding: 10px;
+    .dados {
+      margin-top: 10px;
+      .cidade {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #city {
+          margin: 0px 15px 0px 5px;
+          font-size: 2rem;
+        }
+        img {
+          width: 20px;
+          height: auto;
+        }
+      }
+      
+    }
+  }
+}
