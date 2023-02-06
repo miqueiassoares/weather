@@ -15,12 +15,6 @@ async function procurarDados() {
   return dados;
 }
 
-async function getFlagUrl(countryCode) {
-  const response = await fetch(`https://restcountries.com/v2/alpha/${countryCode}`);
-  const data = await response.json();
-  return data.flag;
-}
-
 function exibir(dados) {
   const cidade = document.querySelector("#city");
   const temperatura = document.querySelector(".temperatura span");
@@ -45,10 +39,6 @@ function exibir(dados) {
     "src",
     `https://flagcdn.com/w320/${(dados.sys.country).toLowerCase()}.png`
   );
-}
-
-function carregando() {
-  loader.classList.toggle("hidden");
 }
 
 function toggleLoading(componente) {

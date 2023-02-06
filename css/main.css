@@ -16,8 +16,10 @@ body {
   padding-top: 100px;
   font-size: 62.5%;
   width: 100vw;
+  min-height: 500px;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .ensolarado {
@@ -86,6 +88,11 @@ body {
   border: none;
   font-size: 1.1rem;
 }
+.container .inputDados form input:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 5px 2px #a9a9ea;
+          box-shadow: 0px 0px 5px 2px #a9a9ea;
+}
 @media screen and (min-width: 800px) {
   .container .inputDados form input {
     padding: 7px;
@@ -149,8 +156,14 @@ body {
   font-size: 2rem;
 }
 .container .exibicao .dados .cidade img {
-  width: 20px;
+  width: 30px;
   height: auto;
+}
+@media screen and (min-width: 800px) {
+  .container .exibicao .dados .cidade img {
+    width: 40px;
+    height: auto;
+  }
 }
 .container .exibicao .dados .temperatura {
   margin-top: 10px;
