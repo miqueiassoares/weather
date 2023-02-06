@@ -1,0 +1,82 @@
+"use strict";
+
+const chaveApi = "7d895dabbca5ae53eb53aa483f2ac654";
+
+const inputCidade = document.querySelector("#inputCidade");
+const buttonPesquisar = document.querySelector("#pesquisar");
+const erro404 = document.querySelector(".erro404");
+const loader = document.querySelector(".carregando");
+const dadosDisplay = document.querySelector(".dados");
+
+async function procurarDados() {
+  const cidade = inputCidade.value;
+  const apiWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${chaveApi}&lang=pt_br`;
+  const dados = await fetch(apiWeatherUrl).then((data) => data.json());
+  return dados;
+}
+
+async function getFlagUrl(countryCode) {
+  const response = await fetch(`https://restcountries.com/v2/alpha/${countryCode}`);
+  const data = await response.json();
+  return data.flag;
+}
+
+function exibir(dados) {
+  const cidade = document.querySelector("#city");
+  const temperatura = document.querySelector(".temperatura span");
+  const descricao = document.querySelector(".descricao__texto");
+  const umidade = document.querySelector("#umidade span");
+  const vento = document.querySelector("#vento span");
+  const dadosDisplay = document.querySelector(".dados");
+  const paisIcon = document.querySelector("#pais");
+  const climaIcon = document.querySelector("#clima-icone");
+  dadosDisplay.classList.remove = "hidden";
+  cidade.textContent = dados.name;
+  temperatura.textContent = parseInt(dados.main.temp);
+  descricao.textContent = dados.weather[0].description;
+  umidade.textContent = dados.main.humidity+"%";
+  vento.textContent = parseInt(dados.wind.speed)+"km/h";
+  console.log(paisIcon);
+  climaIcon.setAttribute(
+    "src", 
+    `http://openweathermap.org/img/wn/${dados.weather[0].icon}.png`
+  );
+  paisIcon.setAttribute(
+    "src",
+    `https://flagcdn.com/w320/${(dados.sys.country).toLowerCase()}.png`
+  );
+}
+
+function carregando() {
+  loader.classList.toggle("hidden");
+}
+
+function toggleLoading(componente) {
+  componente.classList.toggle("hidden");
+}
+
+function sucesso(dados) {
+  inputCidade.value = "";
+  loader.classList.add("hidden");
+  toggleLoading(dadosDisplay);
+  exibir(dados);
+}
+
+function falha() {
+  toggleLoading(loader);
+  toggleLoading(erro404);
+  console.log("passou");
+}
+
+buttonPesquisar.addEventListener("click", async (evento) => {
+  evento.preventDefault();
+  loader.classList.remove("hidden");
+  erro404.classList.add("hidden");
+  dadosDisplay.classList.add("hidden")
+  const dados = await procurarDados();
+  if (dados.cod !== "404" && dados.cod !== "400") {
+    sucesso(dados);
+  } else {
+    falha();
+  }
+});
