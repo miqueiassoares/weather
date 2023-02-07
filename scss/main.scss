@@ -142,8 +142,12 @@
       }
     }
     .carregando {
-      animation-name: mudarOpacidade;
-      animation-fill-mode: forwards;
+      width: 100%;
+      height: 80px;
+      img {
+        width: auto;
+        height: 100%;
+      }
     }
     .erro404 {
       p {

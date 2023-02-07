@@ -1,6 +1,6 @@
 "use strict";
 
-const chaveApi = "7d895dabbca5ae53eb53aa483f2ac654";
+const chaveApi = "";
 
 const inputCidade = document.querySelector("#inputCidade");
 const buttonPesquisar = document.querySelector("#pesquisar");
@@ -30,7 +30,6 @@ function exibir(dados) {
   descricao.textContent = dados.weather[0].description;
   umidade.textContent = dados.main.humidity+"%";
   vento.textContent = parseInt(dados.wind.speed)+"km/h";
-  console.log(paisIcon);
   climaIcon.setAttribute(
     "src", 
     `http://openweathermap.org/img/wn/${dados.weather[0].icon}.png`
@@ -47,7 +46,7 @@ function toggleLoading(componente) {
 
 function sucesso(dados) {
   inputCidade.value = "";
-  loader.classList.add("hidden");
+  toggleLoading(loader);
   toggleLoading(dadosDisplay);
   exibir(dados);
 }
@@ -55,14 +54,13 @@ function sucesso(dados) {
 function falha() {
   toggleLoading(loader);
   toggleLoading(erro404);
-  console.log("passou");
 }
 
 buttonPesquisar.addEventListener("click", async (evento) => {
   evento.preventDefault();
   loader.classList.remove("hidden");
   erro404.classList.add("hidden");
-  dadosDisplay.classList.add("hidden")
+  dadosDisplay.classList.add("hidden");
   const dados = await procurarDados();
   if (dados.cod !== "404" && dados.cod !== "400") {
     sucesso(dados);

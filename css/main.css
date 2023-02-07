@@ -19,7 +19,7 @@ body {
   min-height: 500px;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .ensolarado {
@@ -207,10 +207,12 @@ body {
   color: #a9a9ea;
 }
 .container .exibicao .carregando {
-  -webkit-animation-name: mudarOpacidade;
-          animation-name: mudarOpacidade;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  width: 100%;
+  height: 80px;
+}
+.container .exibicao .carregando img {
+  width: auto;
+  height: 100%;
 }
 .container .exibicao .erro404 p {
   padding: 5px;
