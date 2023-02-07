@@ -117,11 +117,12 @@
         align-items: center;
         gap: 10px;
         &__texto {
+          text-transform: capitalize;
           font-size: 1rem;
           color: #8f8fff;
         }
         img {
-          width: 30px;
+          width: 50px;
           height: auto;
         }
       }

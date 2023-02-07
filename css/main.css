@@ -182,11 +182,12 @@ body {
   gap: 10px;
 }
 .container .exibicao .dados .descricao__texto {
+  text-transform: capitalize;
   font-size: 1rem;
   color: #8f8fff;
 }
 .container .exibicao .dados .descricao img {
-  width: 30px;
+  width: 50px;
   height: auto;
 }
 .container .exibicao .dados .container__detalhes {
