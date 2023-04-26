@@ -1,0 +1,135 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: red;
+  background: linear-gradient(180deg, #1E0F3A 0%, #272791 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.weather {
+  margin-top: 80px;
+  width: min-content;
+  height: max-content;
+  background-color: rgba(39, 39, 145, 0.8705882353);
+  box-shadow: 5px 5px 10px #222249;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  width: 380px;
+  line-height: 30px;
+  font-size: 1.8rem;
+}
+
+.bloco_pesquisa {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 80%;
+  background-color: aliceblue;
+  color: #1E0F3A;
+  border: 0;
+  border-radius: 5px 0px 0px 5px;
+}
+
+input:focus {
+  outline: 0;
+  border: 0;
+  box-shadow: 0px 0px 5px #06ffd5;
+}
+
+button {
+  width: 20%;
+  cursor: pointer;
+  border: 0;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  background: #8585e0;
+  transition: background .2s;
+  border-radius: 0px 5px 5px 0px;
+}
+
+button:hover {
+  background: #1E0F3A;
+}
+
+.info {
+  margin-top: 20px;
+  border-top: 2px solid #8585e0;
+  border-bottom: 2px solid #8585e0;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0;
+}
+
+.cidade {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 30px 0px 0px;
+}
+
+.cidade img {
+  width: 35px;
+  margin-bottom: -5px;
+}
+
+.cidade i {
+  font-size: 1rem;
+}
+
+.temperatura {
+  font-size: 2rem;
+  line-height: 0;
+}
+
+.clima {
+  color: #8585e0;
+  text-transform: capitalize;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.dados_adicionais {
+  display: flex;
+  gap: 30px;
+  color: #bfbfec;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+.dados_adicionais span i {
+  margin-right: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 100px;
+}
+
+.erro {
+  margin-top: 20px;
+  padding: 10px;
+  color: red;
+  background-color: #1E0F3A;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.erro p {
+  margin: 0;
+}
