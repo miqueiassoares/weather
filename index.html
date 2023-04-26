@@ -1,59 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather</title>
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/main.css">
-  <script src="index.js" defer></script>
-</head>
-<body class="">
-  <div class="sun"></div>
-  <div class="container">
-    <div class="inputDados">
-      <h1>Confira o clima de cidades no mundo todo!</h1>
-      <form autocomplete="off">
-        <input
-          type="text"
-          maxlength="40"
-          id="inputCidade"
-          placeholder="Nome da cidade:">
-        <button id="pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-    </div>
-    <div class="exibicao">
-      <div class="dados hidden">
-        <h2 class="cidade">
-          <i class="fa-solid fa-location-dot"></i>
-          <span id="city"></span>
-          <img src="" alt="Bandeira do país" id="pais">
-        </h2>
-        <div class="temperatura"><span></span>&deg;C</div>
-        <div class="descricao">
-          <span class="descricao__texto"></span>
-          <img src="" alt="Condições climáticas" id="clima-icone">
-        </div>
-        <div class="container__detalhes">
-          <p id="umidade">
-            <i class="fa-solid fa-droplet"></i>
-            <span></span>
-          </p>
-          <p id="vento">
-            <i class="fa-solid fa-wind"></i>
-            <span></span>
-          </p>
-        </div>
-      </div>
-      <div class="carregando hidden">
-        <img src="img/loader.svg" alt="">
-      </div>
-      <div class="erro404 hidden">
-        <p>Não conseguimos encontrar essa cidade. Por favor, verifique se você digitou o nome corretamente!</p>
-      </div>
-    </div>
-  </div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather com REACT</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
